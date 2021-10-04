@@ -1,0 +1,13 @@
+html {
+    margin: 0 !important;
+}
+
+*{
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-loumar {
+    background-color: #0ab4a1;
+}
