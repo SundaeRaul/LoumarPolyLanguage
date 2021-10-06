@@ -1,4 +1,12 @@
 <?php 
+
+// Adds dynamic title ta g support
+function loumar_theme_support(){
+    add_theme_support('title-tag');
+}
+add_action('after_theme_setup', 'loumar_theme_support');
+
+
 /**
 * Enqueue scripts and styles
 */
