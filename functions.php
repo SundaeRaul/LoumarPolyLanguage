@@ -15,7 +15,6 @@
         wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/flickity/js/fllickity.pkgd.min.js', array('jquery'), '20120206', true );
         wp_enqueue_style( 'flickity', get_stylesheet_directory_uri() . '/assets/flickity/css/flickity.min.css', array(), 20141119 );
     }
-
     add_action('wp_enqueue_scripts', 'flickity_enqueue_scripts');
 
     function theme_enqueue_scripts() {
