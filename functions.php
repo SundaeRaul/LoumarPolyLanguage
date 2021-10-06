@@ -2,30 +2,21 @@
 /**
 * Enqueue scripts and styles
 */
-    function bootstrap_enqueue_scripts() {
+    function loumar_enqueue_styles() {
         // all styles
-        wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.css', array(), 20141119 );
-        // all scripts
-        wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), '20120206', true );
-        wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/bootstrap/js/scripts.js', array('jquery'), '20120206', true );
-    }
-    add_action( 'wp_enqueue_scripts', 'bootstrap_enqueue_scripts' );
-
-    function flickity_enqueue_scripts() {
-        wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/flickity/js/fllickity.pkgd.min.js', array('jquery'), '20120206', true );
-        wp_enqueue_style( 'flickity', get_stylesheet_directory_uri() . '/assets/flickity/css/flickity.min.css', array(), 20141119 );
-    }
-    add_action('wp_enqueue_scripts', 'flickity_enqueue_scripts');
-
-    function theme_enqueue_scripts() {
-        // all styles
+        wp_enqueue_style( 'bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css", array(),'5.1.2', 'all' );
+        wp_enqueue_style( 'flickity', "https://unpkg.com/flickity@2/dist/flickity.min.css", array(),'2.0', 'all' );
         wp_enqueue_style( 'css', get_stylesheet_directory_uri() . '/assets/css/template.css', array(), 20141119 );
-        // all scripts
-        wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/template.js', array('jquery'), '20120206', true );
-
     }
-    add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
+    add_action( 'wp_enqueue_scripts', 'loumar_enqueue_styles' );
 
+    function loumar_enqueue_scripts() {
+        wp_enqueue_script( 'flickity', "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js", array(), '20120206', true );
+        wp_enqueue_script( 'bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js", array(), '5.1.2', true );
+        wp_enqueue_script( 'popper', "https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js", array(), '2.10.2', true );
+        wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/template.js', array('jquery'), '20120206', true );
+    }
+    add_action('wp_enqueue_scripts', 'loumar_enqueue_scripts');
 
     if ( ! function_exists( 'loumar_poly_lang_setup' ) ) :
 
